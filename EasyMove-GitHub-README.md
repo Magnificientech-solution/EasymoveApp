@@ -64,18 +64,7 @@ A sophisticated man and van transport service platform delivering transparent, d
 The application requires the following environment variables:
 
 ```
-# Database
-DATABASE_URL=postgresql://username:password@host:port/database
-
-# Stripe (Payments)
-VITE_STRIPE_PUBLIC_KEY=pk_test_your_publishable_key
-STRIPE_SECRET_KEY=sk_test_your_secret_key
-STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
-
-# PayPal (Payments)
-PAYPAL_CLIENT_ID=your_client_id
-PAYPAL_CLIENT_SECRET=your_client_secret
-
+#
 # Google Maps (Optional)
 GOOGLE_MAPS_API_KEY=your_api_key
 ```
