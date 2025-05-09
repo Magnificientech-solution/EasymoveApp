@@ -12,18 +12,7 @@
 Configure the following environment variables in your hosting platform:
 
 ```
-# Stripe Configuration
-VITE_STRIPE_PUBLIC_KEY=pk_test_your_public_key
-STRIPE_SECRET_KEY=sk_test_your_secret_key
-STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
-
-# PayPal Configuration
-PAYPAL_CLIENT_ID=your_paypal_client_id
-PAYPAL_CLIENT_SECRET=your_paypal_client_secret
-
-# Database Configuration
-DATABASE_URL=postgresql://username:password@host:port/database
-
+#
 # Google Maps API (Optional)
 GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 ```
