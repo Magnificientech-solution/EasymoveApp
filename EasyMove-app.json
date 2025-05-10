@@ -1,0 +1,67 @@
+{
+  "name": "easymove-man-and-van",
+  "description": "A man and van transport service platform with pricing calculator and payment processing",
+  "repository": "https://github.com/yourusername/easymove-man-and-van",
+  "logo": "https://example.com/logo.png",
+  "keywords": ["node", "express", "react", "transport", "pricing", "stripe", "paypal"],
+  "env": {
+    "NODE_ENV": {
+      "description": "Environment setting: development or production",
+      "value": "production"
+    },
+    "VITE_STRIPE_PUBLIC_KEY": {
+      "description": "Stripe publishable key (starts with pk_)",
+      "required": true
+    },
+    "STRIPE_SECRET_KEY": {
+      "description": "Stripe secret key (starts with sk_)",
+      "required": true
+    },
+    "STRIPE_WEBHOOK_SECRET": {
+      "description": "Stripe webhook signing secret (starts with whsec_)",
+      "required": false
+    },
+    "PAYPAL_CLIENT_ID": {
+      "description": "PayPal client ID",
+      "required": true
+    },
+    "PAYPAL_CLIENT_SECRET": {
+      "description": "PayPal client secret",
+      "required": true
+    },
+    "DATABASE_URL": {
+      "description": "PostgreSQL connection URL",
+      "required": true
+    },
+    "GOOGLE_MAPS_API_KEY": {
+      "description": "Google Maps API key for distance calculation",
+      "required": false
+    },
+    "PORT": {
+      "description": "Port to run the server on",
+      "value": "5000"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev",
+      "as": "DATABASE"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "npm run db:push"
+  },
+  "success_url": "/",
+  "stack": "heroku-22"
+}
